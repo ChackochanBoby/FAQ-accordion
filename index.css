@@ -1,0 +1,128 @@
+:root {
+    --White: 0, 0%, 100%;
+    --Light-pink: 275, 100%, 97%;
+    --Grayish-purple: 292, 16%, 49%;
+    --Dark-purple: 292, 42%, 14%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto min-content;
+    font-family: "Work Sans", sans-serif;
+
+    background-image: url(./assets/images/background-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position-x:center;
+    background-size: 100%;
+    background-color: hsl(var(--Light-pink));
+}
+@media screen and (min-width: 576px){
+    body{
+        background-image: url(./assets/images/background-pattern-desktop.svg);
+    }
+}
+.container{
+    margin-inline: auto;
+    background-color: hsl(var(--White));
+    padding-top: 1rem;
+    padding-inline: 1rem;
+    max-width: 600px;
+    border-radius: .5rem;
+}
+.container>div{
+    padding: .5rem 0;
+}
+main a{
+    text-decoration: none;
+
+}
+main{
+    padding: 9rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media screen and (min-width: 576px){
+    main{
+        padding: 0 2rem;
+    }
+    .container{
+        padding-inline: 2rem;
+    }
+}
+h1{
+    font-size: 2rem;
+    font-weight: 700;
+    color: hsl(var(--Dark-purple));
+}
+h2{
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: hsl(var(--Dark-purple));
+}
+h2 a{
+    color: inherit;
+}
+h2 a:hover{
+    color: hsl(var(--Grayish-purple));
+
+}
+
+p{  
+    display: inline-block;
+    color: hsl(var(--Grayish-purple));
+    font-weight: 400;
+    font-size: 1rem;
+    overflow: hidden;
+    max-height: 0rem;
+    transition:all 700ms linear;
+}
+.question-div{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+	-webkit-clip-path: inset(50%) !important;
+		clip-path: inset(50%) !important;  /* 2 */
+	height: 1px !important;
+	margin: -1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+	white-space: nowrap !important;            /* 3 */
+}
+.heading-div{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.show-answers{
+    max-height: 10rem;
+}
+.showbutton{
+    aspect-ratio: 1;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-image: url(./assets/images/icon-plus.svg);
+    background-size: cover;
+    background-position: center center;
+    border: none;
+}
+.btn-bg{
+    background-image: url(./assets/images/icon-minus.svg);
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%);}
