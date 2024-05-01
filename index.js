@@ -19,10 +19,21 @@ function answer(id) {
     question.addEventListener("click", (event) => {
       event.preventDefault()
       const questionId = question.id; // Get the ID of the clicked question
-      console.log(questionId);
       const answerId = answer(questionId); // Get the corresponding answer ID
       const answerEl = document.getElementById(answerId); // Find the answer element
       answerEl.classList.toggle("show-answers")
+
+      //changing aria-hidden and aria-expanded for semantics
+      if(answerEl.classList.contains("show-answers")){
+        answerEl.setAttribute("aria-hidden", "false");
+        answerEl.setAttribute("aria-expanded","true")
+      }
+      else{
+        answerEl.setAttribute('aria-hidden', "true");
+        answerEl.setAttribute("aria-expanded","false")
+      }
+
+      //changing button background
       const showEl=document.getElementById("showbutton-"+ questionId.split("-")[1])
       showEl.classList.toggle("btn-bg")
     });

@@ -27,15 +27,16 @@ body{
         background-image: url(./assets/images/background-pattern-desktop.svg);
     }
 }
-.container{
+.faq-section{
     margin-inline: auto;
     background-color: hsl(var(--White));
     padding-top: 1rem;
     padding-inline: 1rem;
-    max-width: 600px;
+    max-width: 630px;
     border-radius: .5rem;
+    box-shadow: 0px 0px 23px 0px hsl(var(--Grayish-purple),.3);
 }
-.container>div{
+.faq-section>article,.faq-section>header{
     padding: .5rem 0;
 }
 main a{
@@ -52,12 +53,12 @@ main{
     main{
         padding: 0 2rem;
     }
-    .container{
+    .faq-section{
         padding-inline: 2rem;
     }
 }
 h1{
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 700;
     color: hsl(var(--Dark-purple));
 }
@@ -70,11 +71,9 @@ h2{
 h2 a{
     color: inherit;
 }
-h2 a:hover{
+h2:hover,h2 a:focus-visible,h2:focus-within{
     color: hsl(var(--Grayish-purple));
-
 }
-
 p{  
     display: inline-block;
     color: hsl(var(--Grayish-purple));
@@ -82,14 +81,14 @@ p{
     font-size: 1rem;
     overflow: hidden;
     max-height: 0rem;
-    transition:all 700ms linear;
+    transition:all 500ms ease-in-out;
 }
 .question-div{
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 2rem;
+    gap: .5rem;
 }
 .sr-only {
 	border: 0 !important;
@@ -104,7 +103,7 @@ p{
 	width: 1px !important;
 	white-space: nowrap !important;            /* 3 */
 }
-.heading-div{
+.faq-header{
     display: flex;
     gap: 1rem;
     align-items: center;
@@ -113,6 +112,8 @@ p{
     max-height: 10rem;
 }
 .showbutton{
+    background-color: transparent;
+    cursor: pointer;
     aspect-ratio: 1;
     height: 1.5rem;
     border-radius: 50%;
@@ -121,6 +122,7 @@ p{
     background-position: center center;
     border: none;
 }
+
 .btn-bg{
     background-image: url(./assets/images/icon-minus.svg);
 }
